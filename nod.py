@@ -3,8 +3,11 @@
 a, b = map(int, input("Введите два числа ").split())
 b1 = b
 a1 = a 
-while b != 0:
-    a, b = b, a % b
+while a != b:
+    if a > b:
+        a = a - b
+    else:
+        b = b - a
 if a == 1:
     print("(" + str(a1) + "," + str(b1) + ")" + " - взаимнопростые")
 else:
