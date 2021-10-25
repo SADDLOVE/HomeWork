@@ -14,11 +14,11 @@ def Sravn(comp, men):
     elif comp == "ножницы" and men == "камень":
         com.configure(text = "Выбросил в мусор свои " + comp + "из-за твоего камня, человекен!")
     elif comp == "бумагу" and men == "ножницы":
-        com.configure(text = "Его величество компьютер выбрал " + comp + ", потому что не очень-то и хотелось тебя обыграть, челевечешка!")
+        com.configure(text = "Его величество компьютер выбрал " + comp + ", потому что не очень-то и хотелось тебя обыграть, челевечешка!",padx="15", pady="6", font="15")
     elif comp == "бумагу" and men == "камень":
         com.configure(text = "Выкинул  " + comp + " Я конечно не Стив Джобс , но удивлять умею!")
     elif comp == men:
-        com.configure(text = "На этот раз ничья! Но только на этот раз...")
+        com.configure(text = "На этот раз ничья! Но только на этот раз...", padx="15", pady="6", font="15")
     else:
         messagebox.showinfo('Подумай ещё!', 'Ошибка')
 def nog():
@@ -41,13 +41,13 @@ window = Tk()
 window.title("Добро пожаловать в игру 'Камень, Ножницы, Бумага'")
 window.geometry('1200x750')
 lbl = Label(window, text="Давайте сыграем в игру!", font=("Arial Bold", 58))
-lbl.grid(column=0, row=0)
+lbl.grid(column=0, row=1)
 com = Label(window, text="Сделай свой ход, человекен! Выбери один из предложеных вариантов", font=("Arial Bold", 17))
-com.grid(column=0, row=2)
+com.grid(column=0, row=3)
 btn = Button(window, text = "Ножницы", command=nog)
-btn.grid(column=0, row=3)
-btn = Button(window, text = "Бумага", command=paper)
-btn.grid(column=0, row=4)
-btn = Button(window, text = "Камень", command=stone)
 btn.grid(column=0, row=5)
+btn = Button(window, text = "Бумага", command=paper)
+btn.grid(column=0, row=6)
+btn = Button(window, text = "Камень", command=stone)
+btn.grid(column=0, row=7)
 window.mainloop()
