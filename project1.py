@@ -1,3 +1,4 @@
+#Камень ножницы бамага игра на выживание
 import random
 from tkinter import messagebox
 from tkinter import *
