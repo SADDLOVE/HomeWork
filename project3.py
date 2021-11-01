@@ -31,4 +31,37 @@ async def main():
             actions(name="cmd", buttos=["Отправить", {'label':"Выйти из чата", 'type':'cancel'}])
         ], validate = lambda m: ('msg', "Введите текст сообщения!") if m["cmd"] == "Отправить" and not m["msg"] else None)
 
-        if data is None
+        if data is None:
+            break
+
+        msg_box.append(put_markdown(f"'{nickname}':{data['msg']}"))
+        chat_msgs.append((nickname, data['msg']))
+
+    refresh_task.closed()
+
+    online_users.remove(nickname)
+    toast("Вы вышли из чата!")
+    msg_box.append(put_markdown(f"Пользователь '{nickname}' покинул чат!"))
+    chat_msgs.append(('Эх', f"Пользователь '{nickname}' покинул чат!"))
+
+    put_button(["Перезайти"], onclick=lambda btn: run_js('window.location.reload()'))
+
+async def refresh_msg(nickname, msg_box):
+    global chat_msgs
+    last_idx = len(chat_msgs)
+
+    while True:
+        await asyncio.sleep(1)
+
+        for m in chat_msgs[last_idx:]:
+            if m[0] != nickname:
+                msg_box.append(put_markdown(f"'{m[0]}':{m[1]}"))
+        
+        if len(chat_msgs) > MAX_MESSAGES_COUNT:
+            chat_msgs = chat_msgs[len(chat_msgsm) // 2:]
+
+        last_idx = len(chat_msgs)
+
+if __name__ == "__main__":
+    start_server(main, debug=True, port=8080, cdn=False)
+            
