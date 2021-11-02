@@ -17,7 +17,7 @@ def Sravn(comp, men):
     elif comp == "бумагу" and men == "ножницы":
         com.configure(text = "Его величество компьютер выбрал " + comp + ", потому что не очень-то и хотелось тебя обыграть, челевечешка!")
     elif comp == "бумагу" and men == "камень":
-        com.configure(text = "Выкинул  " + comp + " Я конечно не Стив Джобс , но удивлять умею!", padx = "15", pady = "15", front = "15")
+        com.configure(text = "Выкинул  " + comp + " Я конечно не Стив Джобс , но удивлять умею!")
     elif comp == men:
         com.configure(text = "На этот раз ничья! Но только на этот раз...")
     else:
