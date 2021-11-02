@@ -1,4 +1,4 @@
-#Камень ножницы бамага игра на выживание
+# Камень ножницы бумашка игра на выживание
 import random
 from tkinter import messagebox
 from tkinter import *
@@ -15,11 +15,11 @@ def Sravn(comp, men):
     elif comp == "ножницы" and men == "камень":
         com.configure(text = "Выбросил в мусор свои " + comp + "из-за твоего камня, человекен!")
     elif comp == "бумагу" and men == "ножницы":
-        com.configure(text = "Его величество компьютер выбрал " + comp + ", потому что не очень-то и хотелось тебя обыграть, челевечешка!",padx="15", pady="6", font="15")
+        com.configure(text = "Его величество компьютер выбрал " + comp + ", потому что не очень-то и хотелось тебя обыграть, челевечешка!")
     elif comp == "бумагу" and men == "камень":
-        com.configure(text = "Выкинул  " + comp + " Я конечно не Стив Джобс , но удивлять умею!")
+        com.configure(text = "Выкинул  " + comp + " Я конечно не Стив Джобс , но удивлять умею!", padx = "15", pady = "15", front = "15")
     elif comp == men:
-        com.configure(text = "На этот раз ничья! Но только на этот раз...", padx="15", pady="6", font="15")
+        com.configure(text = "На этот раз ничья! Но только на этот раз...")
     else:
         messagebox.showinfo('Подумай ещё!', 'Ошибка')
 def nog():
